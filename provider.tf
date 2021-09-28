@@ -22,11 +22,19 @@ provider "aws" {
 ## Specifies the S3 Bucket and DynamoDB table used for the durable backend and state locking
 
 terraform {
-    backend "s3" {
-      encrypt = true
-      bucket = "cicd-demo-1-terraform-state-lock"
-      dynamodb_table = "cicd-demo-1-terraform-state-lock"
-      key = "path/path/terraform.tfstate"
-      region = "us-east-1"
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = ">= 3.20.0"
+    }
+  }
+  backend "s3" {
+    encrypt = true
+    bucket = "cicd-demo-1-terraform-state-lock"
+    dynamodb_table = "cicd-demo-1-terraform-state-lock"
+    key = "path/path/terraform.tfstate"
+    region = "us-east-1"
   }
 }
+
+
