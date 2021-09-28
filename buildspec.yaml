@@ -30,7 +30,7 @@ phases:
 
   build:
     commands:
-      - terraform $TF_COMMAND
+      - terraform $TF_COMMAND -input=false
 
   post_build:
     commands:
