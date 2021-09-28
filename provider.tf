@@ -17,16 +17,16 @@
 
 ## Specifies the Region your Terraform Provider will server
 provider "aws" {
-  region = "us-east-2"
+  region = "us-east-1"
 }
 ## Specifies the S3 Bucket and DynamoDB table used for the durable backend and state locking
 
 terraform {
     backend "s3" {
       encrypt = true
-      bucket = "cicd-demo-1-terraform-state"
+      bucket = "cicd-demo-1-terraform-state-lock"
       dynamodb_table = "cicd-demo-1-terraform-state-lock"
       key = "path/path/terraform.tfstate"
-      region = "us-east-2"
+      region = "us-east-1"
   }
 }
