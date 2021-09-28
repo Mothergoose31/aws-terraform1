@@ -25,9 +25,10 @@ terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
-      version = "~> 3.20.0"
+      version = "~> 3.0"
     }
   }
+ 
   backend "s3" {
     encrypt = true
     bucket = "cicd-demo-1-terraform-state-lock"
