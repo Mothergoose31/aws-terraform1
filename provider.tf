@@ -31,8 +31,8 @@ terraform {
  
   backend "s3" {
     encrypt = true
-    bucket = "cicd-demo-1-terraform-state-lock"
-    dynamodb_table = "cicd-demo-1-terraform-state-lock"
+    bucket = "pipeline-1-mc-tf-state"
+    dynamodb_table = "pipeline-1-mc-tf-state"
     key = "path/path/terraform.tfstate"
     region = "us-east-1"
   }
